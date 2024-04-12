@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let numbers = {};
+let foundMatch = false;
+
+array.forEach(number => {
+  const difference = target - number;
+  if (numbers.hasOwnProperty(difference)) {
+    foundMatch = true;
+  }
+  numbers[number] = true;
+});
+
+return foundMatch;
 }
 
 /* 
